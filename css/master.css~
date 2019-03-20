@@ -1,0 +1,50 @@
+header{
+  
+    color:    ?;
+    text-align: center;
+    padding: 2px;
+    margin: 10px 50px;
+}
+body {
+	background-image: url(back.jpg);
+	text-align: center;
+}
+.row{
+	color:white;
+}
+section{
+	text-align: center;
+}
+ul{
+    list-style: none;
+    width: 200px;
+    /*border: 20px solid #C71585;*/
+}
+
+ul li{
+    border: 2px solid #191970;
+    margin-bottom: 5px;
+}
+ul li a{
+    text-decoration: none;
+    background-color:         #48D1CC;
+    display: block;
+    padding: 10px;
+}
+ul li a:hover{
+    background-color:     #00FFFF;
+    color: #66CDAA;
+}    
+
+img {
+        margin:auto;
+        display:inline-block;
+        width:30;
+}
+* {
+    font-family: 'Mountains of Christmas', sans-serif;;
+}
+
+header h1 {
+    font-size: 24px;
+}	

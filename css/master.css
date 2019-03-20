@@ -1,0 +1,134 @@
+header{
+  
+    color:    ?;
+    text-align: center;
+    padding: 2px;
+}
+body {
+	background-image: url(back.jpg);
+	text-align: center;
+}
+.row{
+	color:white;
+}	
+section{
+	text-align: center;
+}
+ul{
+    list-style: none;
+    width: 200px;
+    /*border: 20px solid #C71585;*/
+}
+
+ul li{
+    border: 2px solid #191970;
+    margin-bottom: 5px;
+}
+ul li a{
+    text-decoration: none;
+    background-color:         #48D1CC;
+    display: block;
+    padding: 10px;
+}
+ul li a:hover{
+    background-color:     #00FFFF;
+    color: #66CDAA;
+}    
+
+img {
+        margin:auto;
+        display:inline-block;
+        width:30;
+}
+* {
+    font-family: 'Mountains of Christmas', sans-serif;;
+}
+#game{
+	font-size:20px;
+	font-family:arial;
+	color:white;
+	margin:0 30%;
+}
+header h1 {
+    font-size: 50px;
+	color:white;
+	width:100%;
+	border-bottom:inset 1px ;
+}	
+#number{
+	font-size:25px;
+	color:#dd0303;
+	opacity:0.8;
+}
+#question{
+	font-size:30px;
+	color:white;
+}
+#answer input.answer{
+	padding:20px 30px;
+	font-size:20px;
+	color:white;
+	border-radius:8px;
+	background-color:#dd0303;
+	opacity:0.8;
+}
+#answer input.answer:hover:enabled{
+		background-color:transparent;
+		opacity:0.7;
+}
+#answer input.answer:disabled{
+	opacity:2.0;
+	background-color:#910000;
+	background-image:url("l.jpg");
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.but #submit{
+	padding:5px 15px;
+	font-size:10px;
+	color:white;
+	border-radius:8px;
+	background-color:#dd0303;
+	opacity:0.8;
+}
+.but #submit:hover{
+	opacity:2.0;
+	background-color:#910000;
+}
+.but #new{
+	padding:5px 15px;
+	font-size:10px;
+	color:white;
+	border-radius:8px;
+	background-color:#dd0303;
+	opacity:0.8;
+}
+.but #new:hover{
+	opacity:2.0;
+	background-color:#910000;
+}
+.but #end{
+	padding:5px 15px;
+	font-size:10px;
+	color:white;
+	border-radius:8px;
+	background-color:#dd0303;
+	opacity:0.8;
+}
+.but #end:hover{
+	opacity:2.0;
+	background-color:#910000;
+}
+.but #clear{
+	padding:5px 15px;
+	font-size:10px;
+	color:white;
+	border-radius:8px;
+	background-color:#dd0303;
+	opacity:0.8;
+}
+.but #clear:hover{
+	opacity:2.0;
+	background-color:#910000;
+}
+

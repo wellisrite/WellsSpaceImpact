@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	</head>
+	<style>
+		#myCanvas
+		{
+		display: block;
+    margin: 0 auto;
+		}
+		</style>
+		<body onload="startGame()">
+			<script src="js/jquery-3.1.1.min.js"></script>
+			<script>
+			function startGame(){
+			myGameArea.start();
+			bg = new background("3.png");
+			well=new sprite(100,40,"2.png");
+			rite=new sprite(700,100,"1.jpg");
+			}		
+			var myGameArea = {
+			canvas : document.createElement("canvas"),
+			start : function() {
+			this.canvas.id="myCanvas";
+			this.canvas.style=("border:1px solid black;");
+			this.canvas.width = 1200;
+			this.canvas.height= 673;
+			this.canvas.border="1px solid black";
+			this.ctx=this.canvas.getContext("2d");
+			document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+			this.interval = setInterval(updateGameArea, 10);
+			window.addEventListener('keydown', function (e) {
+			myGameArea.keys = (myGameArea.keys || []);
+            myGameArea.keys[e.keyCode] = true;
+			})
+			window.addEventListener('keyup', function (e) {
+				myGameArea.keys[e.keyCode] = false;
+			})
+		},
+		 clear : function() {
+				this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+		}
+	}
+			function background(src){
+				img= new Image();
+				img.src=src;
+				img.onload = function() {
+					ctx.drawImage(img,0,0);
+				}
+				this.update = function(){
+						ctx.drawImage(img,0,0);
+				}
+				
+			}
+			function tryrite(){
+				ctx.moveTo(0,0);
+				ctx.lineTo(canvas.width,canvas.height);
+				ctx.stroke();
+				ctx.font="30px arial";
+				ctx.textAlign=("center");
+				ctx.fillText("well",canvas.width/2,canvas.height/2);
+			}
+			function sprite(x,y,src){
+				this.x=x;
+				this.y=y;
+				this.speedX = 0;
+				this.speedY = 0;
+				ctx=myGameArea.canvas.getContext("2d");
+				//ctx.fillStyle="col";
+				var imagee=new Image();
+				imagee.src=src;
+				imagee.onload = function() {
+						ctx.drawImage(imagee,this.x,this.y);
+					}
+				this.update = function(){
+						ctx.drawImage(imagee,this.x,this.y);
+				}
+				    this.newPos = function() {
+					this.x += this.speedX;
+					this.y += this.speedY;
+					console.log(""+this.x+" "+this.y+" "+myGameArea.canvas.height);
+					if(this.x>=myGameArea.canvas.width-100){
+					this.x=this.x-20;
+					imagee.src="11.png";
+					}
+					if(this.x<=(-400)){
+					this.x=this.x+20;
+					imagee.src="2.png";
+					}
+					if(this.y<=30){
+					this.y=this.y+10;
+					}
+					if(this.y>=673-500){
+					this.y=this.y-10;
+					}	
+				}
+			}
+			function updateGameArea(){
+			    myGameArea.clear();
+				//rite.update();
+				well.speedX = 0;
+				well.speedY = 0;
+				if (myGameArea.keys && myGameArea.keys[37]) {well.speedX = -4; }
+				if (myGameArea.keys && myGameArea.keys[39]) {well.speedX = 4; }
+				if (myGameArea.keys && myGameArea.keys[38]) {well.speedY = -4; }
+				if (myGameArea.keys && myGameArea.keys[40]) {well.speedY = 4; }
+				bg.update();
+				well.newPos();
+			    well.update();
+			  if(well.x!=myGameArea.canvas.width/5){
+			  well.x +=1;
+			  }
+			  else{
+					ctx.font="30px arial";
+					ctx.fillStyle="white";
+					ctx.fillText("wellis",800,300);
+					//ctx.clearRect(800,200,200,200);
+					ctx.fillText("rite",800,400);
+				}
+				console.log(""+well.x);
+				
+			  }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Game</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+	<body>
+	<br>
+	<canvas id="wellrite" style="display:none;"></canvas>
+	<img src="2.png" style="display:none" id="wel">
+	<input type="button" id="start" value="start">
+	</body>
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script>
+	$(document).ready(function() {
+$("#start").click(function() {
+	startGame();
+	$("#start").remove();
+	});
+	function startGame(){
+		myGameArea.start();
+		}
+	var myGameArea = {
+		canvas : document.getElementById("wellrite"),
+		start : function(){
+		this.canvas.width = 800;
+        this.canvas.height = 450;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+		$("#wellrite").css("display","block");
+		}
+	}
+});
+	</script>
+	</html>
