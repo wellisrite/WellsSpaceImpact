@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Game</title>
-        <link rel="stylesheet" href="style.css">
-		<link rel="stylesheet" href="css/master.css">
-    </head>
-	<body>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/master.css">
+</head>
+
+<body>
     <div align="center">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({
-        google_ad_client: "ca-pub-5762913712368521",
-        enable_page_level_ads: true
-      });
-    </script>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-5762913712368521",
+                enable_page_level_ads: true
+            });
+        </script>
     </div>
-	<div class="con" align="center">
-		<h1>Game</h1>
-		<p>Name :<input type="text" name="name"></p>
-		<input type="button" id="play" value="Play">
-		<script src="js/jquery-3.1.1.min.js"></script>
-	<script>
-		 $(document).ready(function() {
-		 if (typeof(Storage) === "undefined") {
+    <div class="con" align="center">
+        <h1>Game</h1>
+        <p>Name :<input type="text" name="name"></p>
+        <input type="button" id="play" value="Play">
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                if (typeof (Storage) === "undefined") {
                     alert("Storage not available. You cannot play. :(");
                     window.location = "error.html";
                 } else {
-                    if(localStorage.getItem("player") !== null) {
-                        //window.location = "game.html";
+                    if (localStorage.getItem("player") !== null) {
                     }
                 }
-		  $("#play").click(function() {
+                $("#play").click(function () {
                     var player = $("input[name='name']").val();
-					//var highscore=parseInt(localStorage.getItem("highscore"));
-					//localStorage.setItem("highscore",0);
-					//localStorage.setItem("highscore",highscore);
+
                     localStorage.setItem("player", player);
-					if(player!=""){
-						window.location = "well.html";
+                    if (player != "") {
+                        window.location = "game.html";
                     }
-                    else{
-                    	alert("Please insert name!");
+                    else {
+                        alert("Please insert name!");
                     }
                 });
             });
-	</script>
-	</body>
-	<footer>
-		<foot>(c)Sam Jones 15.K1.0048</foot>
-	</footer>
-	</body>
+        </script>
+</body>
+<footer>
+    <foot>(c)Sam Jones 15.K1.0048</foot>
+</footer>
+</body>
+
 </html>

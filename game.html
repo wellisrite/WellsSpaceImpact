@@ -1,36 +1,38 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Game</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-	<body>
-	<br>
-	<canvas id="wellrite" style="display:none;"></canvas>
-	<img src="2.png" style="display:none" id="wel">
-	<input type="button" id="start" value="start">
-	</body>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		#myCanvas {
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+</head>
+
+<body>
+	<div align="center">
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-5762913712368521",
+				enable_page_level_ads: true
+			});
+		</script>
+	</div>
+	<button id="well" onclick="startGame()">start game</button>
+	<div align="center">
+	</div>
 	<script src="js/jquery-3.1.1.min.js"></script>
-	<script>
-	$(document).ready(function() {
-$("#start").click(function() {
-	startGame();
-	$("#start").remove();
-	});
-	function startGame(){
-		myGameArea.start();
-		}
-	var myGameArea = {
-		canvas : document.getElementById("wellrite"),
-		start : function(){
-		this.canvas.width = 800;
-        this.canvas.height = 450;
-        this.context = this.canvas.getContext("2d");
-        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-		$("#wellrite").css("display","block");
-		}
-	}
-});
-	</script>
-	</html>
+	<script src="js/game.js"></script>
+</body>
+
+</html>
